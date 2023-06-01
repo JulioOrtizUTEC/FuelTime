@@ -46,7 +46,6 @@
                 android:id="@+id/tvUsers"
                 android:layout_width="117dp"
                 android:layout_height="64dp"
-                android:text="Juan Ernesto"
                 android:textColor="#0450A2"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -70,18 +69,20 @@
                 android:id="@+id/tvNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="Nombres"
                 android:textColor="#172573"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/button" />
 
             <EditText
                 android:id="@+id/edtNombres"
-                android:layout_width="202dp"
-                android:layout_height="26dp"
-                android:ems="10"
+                android:layout_width="265dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="16dp"
                 android:hint="Nombres"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -102,12 +103,14 @@
 
             <EditText
                 android:id="@+id/edtApellidos"
-                android:layout_width="202dp"
-                android:layout_height="20dp"
+                android:layout_width="265dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="8dp"
                 android:ems="10"
                 android:hint="Apellidos"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/edtNombres"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/edtNombres"
                 app:layout_constraintTop_toBottomOf="@+id/tvApellidos" />
 
@@ -125,12 +128,14 @@
 
             <EditText
                 android:id="@+id/edtUser"
-                android:layout_width="202dp"
-                android:layout_height="18dp"
+                android:layout_width="265dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="8dp"
                 android:ems="10"
                 android:hint="Usuario"
                 android:inputType="textEmailAddress"
                 app:layout_constraintEnd_toEndOf="@+id/edtApellidos"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/edtApellidos"
                 app:layout_constraintTop_toBottomOf="@+id/tvUser" />
 
@@ -138,7 +143,7 @@
                 android:id="@+id/tvMasInfo"
                 android:layout_width="216dp"
                 android:layout_height="32dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="44dp"
                 android:text="Más información aqui"
                 android:textAlignment="center"
                 android:textColor="#172573"
@@ -153,12 +158,13 @@
                 android:id="@+id/btnActualizaDatos"
                 android:layout_width="214dp"
                 android:layout_height="51dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="#319A35"
                 android:capitalize="characters"
                 android:text="Actualizar Datos"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="@+id/tvMasInfo"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/tvMasInfo"
                 app:layout_constraintTop_toBottomOf="@+id/tvMasInfo" />
 
@@ -166,11 +172,12 @@
                 android:id="@+id/btnCerrarSesion"
                 android:layout_width="201dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="88dp"
+                android:layout_marginTop="28dp"
                 android:backgroundTint="#C10E0E"
                 android:text="Cerrar Sesión"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="@+id/btnActualizaDatos"
+                app:layout_constraintHorizontal_bias="0.538"
                 app:layout_constraintStart_toStartOf="@+id/btnActualizaDatos"
                 app:layout_constraintTop_toBottomOf="@+id/btnActualizaDatos" />
         </androidx.constraintlayout.widget.ConstraintLayout>

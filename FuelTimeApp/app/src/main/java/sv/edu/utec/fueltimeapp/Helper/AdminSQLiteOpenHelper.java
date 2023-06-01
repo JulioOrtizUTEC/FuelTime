@@ -16,7 +16,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         //Tabla Usuarios
         db.execSQL("CREATE TABLE Usuarios (id_usuario integer primary key autoincrement" +
-                ", nombres text, apellidos text, usuario text, contrasena text, genero text)");
+                ", nombres text, apellidos text, usuario text, contrasena text, genero text, imagen text, fecha_modificacion text)");
         //Tabla Gasolineras
         db.execSQL("CREATE TABLE Gasolineras (id_gasolinera integer primary key autoincrement" +
                 ",idExterno integer, nombre text, direccion text, avatar text, fecha_creacion text, fecha_modificacion text)");
