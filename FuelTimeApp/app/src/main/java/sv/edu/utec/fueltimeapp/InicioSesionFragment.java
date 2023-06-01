@@ -6,6 +6,8 @@ import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -51,6 +53,7 @@ public class InicioSesionFragment extends Fragment {
                 if (LOGIN()){
                     Toast.makeText(getActivity().getApplicationContext(), "Logueado Correctemente", Toast.LENGTH_LONG).show();
                     fragmentosR(new InicioFragment());
+                    guardarPreferencias();
                 }else{
                     Toast.makeText(getActivity().getApplicationContext(), "Usuario o Contraseña Incorrectos", Toast.LENGTH_LONG).show();
                 }
@@ -94,6 +97,19 @@ public class InicioSesionFragment extends Fragment {
         cursor.close();
         bd.close();
         return  true;
+    }
+
+    private void guardarPreferencias(){
+        SharedPreferences preferences =  this.getActivity().getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+
+        String usuario=edtUsuario.getText().toString();
+        String contrasena=edtContrasena.getText().toString();
+
+        SharedPreferences.Editor  editor = preferences.edit();
+        editor.putString("user",usuario);
+        editor.putString("pass",contrasena);
+
+        editor.commit();
     }
 
 }
