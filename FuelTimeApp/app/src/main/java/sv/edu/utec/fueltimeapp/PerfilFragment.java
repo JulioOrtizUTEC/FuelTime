@@ -56,6 +56,7 @@ public class PerfilFragment extends Fragment {
 
     }
 
+    @SuppressLint("Range")
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
 
         View view = inflater.inflate(R.layout.activity_perfil, container, false);
@@ -68,7 +69,9 @@ public class PerfilFragment extends Fragment {
         btnActualizaDatos= (Button) view.findViewById(R.id.btnActualizaDatos);
         btnCloseSession= (Button) view.findViewById(R.id.btnCerrarSesion);
         imFoto= (ImageView) view.findViewById(R.id.ivUser);
-        btnEditarFoto = view.findViewById(R.id.btnEditarFoto);
+        btnEditarFoto = view.findViewById(R.id.button);
+
+        cargarPreferencias();
 
         //Para manejar los permisos
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -125,17 +128,16 @@ public class PerfilFragment extends Fragment {
     private String getImageURI() {
         if (selectedImageUri != null) {
             return selectedImageUri.toString();
+        } else {
+            return ""; // Return an empty string instead of null
         }
-        return null;
     }
+    @SuppressLint("Range")
     private void cargarPreferencias(){
         SharedPreferences preferences =  this.getActivity().getSharedPreferences("credenciales", Context.MODE_PRIVATE);
 
         usuario = preferences.getString("user","No existe la información");
         txtUsers.setText(usuario);
-    }
-    @SuppressLint("Range")
-    private boolean UpdateUsuario(){
         String idUsu = "";
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getActivity().getApplicationContext(),"fulltimeBD",null,2);
         SQLiteDatabase bd= admin.getWritableDatabase();
@@ -146,33 +148,41 @@ public class PerfilFragment extends Fragment {
             idUsu = cursor.getString(cursor.getColumnIndex("id_usuario"));
             String nombres=cursor.getString(cursor.getColumnIndex("nombres"));
             String apellidos=cursor.getString(cursor.getColumnIndex("apellidos"));
-            String imagen=cursor.getString(cursor.getColumnIndex("imagen"));
             txtNombres.setText(nombres);
             txtApellidos.setText(apellidos);
             txtUsuario.setText(usuario);
-        }else{
-
-            Date dt = new Date();
-            SimpleDateFormat df = new SimpleDateFormat("dd-mm-yyyy");
-            String formatteDate = df.format(dt.getDate());
-
-            String nom=txtNombres.getText().toString();
-            String ape=txtApellidos.getText().toString();
-            String usu=txtUsuario.getText().toString();
-
-            // Guardando la imagen URI to the database
-            String newImagen = getImageURI();
-
-            ContentValues informacion =new ContentValues();
-            informacion.put("nombres",nom);
-            informacion.put("apellidos",ape);
-            informacion.put("usuario",usu);
-            informacion.put("imagen", newImagen); // Save the new image URI
-            informacion.put("fecha_modificacion",formatteDate);
-
-            bd.update("Usuarios", informacion, idUsu,null);
-            bd.close();
         }
+    }
+    @SuppressLint("Range")
+    private boolean UpdateUsuario(){
+        String idUsu = "";
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getActivity().getApplicationContext(),"fulltimeBD",null,2);
+        SQLiteDatabase bd= admin.getWritableDatabase();
+        Cursor cursor;
+
+        cursor = bd.rawQuery("SELECT id_usuario from Usuarios WHERE usuario=?",new String[]{usuario});
+        if(cursor.moveToFirst()){
+            idUsu = cursor.getString(cursor.getColumnIndex("id_usuario"));
+        }else{
+            Toast.makeText(getActivity().getApplicationContext(), "El Usuario no existe", Toast.LENGTH_LONG).show();
+        }
+
+        Date dt = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("dd-mm-yyyy");
+        String formatteDate = df.format(dt.getDate());
+        String nom=txtNombres.getText().toString();
+        String ape=txtApellidos.getText().toString();
+        String usu=txtUsuario.getText().toString();
+        // Guardando la imagen URI to the database
+        String newImagen = getImageURI();
+        ContentValues informacion =new ContentValues();
+        informacion.put("nombres",nom);
+        informacion.put("apellidos",ape);
+        informacion.put("usuario",usu);
+        informacion.put("imagen", newImagen); // Save the new image URI
+        informacion.put("fecha_modificacion",formatteDate);
+        bd.update("Usuarios", informacion, idUsu,null);
+        bd.close();
 
         return true;
     }
