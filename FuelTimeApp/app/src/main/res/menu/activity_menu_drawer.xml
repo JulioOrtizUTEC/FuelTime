@@ -14,6 +14,10 @@
             android:icon="@drawable/horario"
             android:title="@string/menu_gallery" />
         <item
+            android:id="@+id/nav_gasolinera"
+            android:icon="@drawable/gasolinera"
+            android:title="@string/Gasolineras"/>
+        <item
             android:id="@+id/nav_leal"
             android:icon="@drawable/leal"
             android:title="@string/menu_slideshow" />

@@ -72,6 +72,11 @@ public class MenuActivity extends MainActivity {
                         Toast.makeText(getApplicationContext(),"Horarios",Toast.LENGTH_SHORT).show();
                         fragmentosR(new HorariosFragment());
                         break;
+                    case R.id.nav_gasolinera:
+                        drwLayout.closeDrawer(GravityCompat.START);
+                        Toast.makeText(getApplicationContext(),"Gasolineras",Toast.LENGTH_SHORT).show();
+                        fragmentosR(new GasolineraFragment());
+                        break;
                     case R.id.nav_leal:
                         drwLayout.closeDrawer(GravityCompat.START);
                         Toast.makeText(getApplicationContext(),"Puntos Leal", Toast.LENGTH_SHORT).show();

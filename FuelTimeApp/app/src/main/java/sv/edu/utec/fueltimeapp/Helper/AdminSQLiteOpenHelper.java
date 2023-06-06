@@ -19,7 +19,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
                 ", nombres text, apellidos text, usuario text, contrasena text, genero text, imagen text, fecha_modificacion text)");
         //Tabla Gasolineras
         db.execSQL("CREATE TABLE Gasolineras (id_gasolinera integer primary key autoincrement" +
-                ",idExterno integer, nombre text, direccion text, avatar text, fecha_creacion text, fecha_modificacion text)");
+                ", nombre text, empresa text, direccion text, fecha_creacion text, fecha_modificacion text)");
         //Tabla Horarios
         db.execSQL("CREATE TABLE Horarios (id_horario integer primary key autoincrement" +
                 ",id_gasolinera integer, hora_abierto text, hora_cierre text, dias_apertura text, fecha_creacion text, fecha_modificacion text)");
