@@ -67,6 +67,11 @@ public class MenuActivity extends MainActivity {
                         Toast.makeText(getApplicationContext(),"Inicio",Toast.LENGTH_SHORT).show();
                         fragmentosR(new InicioFragment());
                         break;
+                    case R.id.nav_agrega_horario:
+                        drwLayout.closeDrawer(GravityCompat.START);
+                        Toast.makeText(getApplicationContext(),"CRUD Horarios",Toast.LENGTH_SHORT).show();
+                        fragmentosR(new CrudHorariosFragment());
+                        break;
                     case R.id.nav_horario:
                         drwLayout.closeDrawer(GravityCompat.START);
                         Toast.makeText(getApplicationContext(),"Horarios",Toast.LENGTH_SHORT).show();

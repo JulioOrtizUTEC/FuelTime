@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="363dp"
+            android:layout_height="85dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="161dp"
+            android:layout_height="83dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:src="@drawable/logo" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTituloHorarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Horarios"
+        android:textColor="#172573"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtIdHorarios"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="ID Horario"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtIdGasolinera"
+        android:layout_width="313dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="ID Gasolinera"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtHoraEntrada"
+        android:layout_width="316dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Hora de Entrada (24h)"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edtHoraSalida"
+        android:layout_width="315dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Hora de Salida (24h)"
+        android:inputType="textPersonName" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cbLunes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text="Lunes" />
+
+        <CheckBox
+            android:id="@+id/cbMartes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Martes" />
+
+        <CheckBox
+            android:id="@+id/cbMiercoles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:text="Miercoles" />
+
+        <CheckBox
+            android:id="@+id/cbJueves"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:text="Jueves" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cbViernes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="Viernes" />
+
+        <CheckBox
+            android:id="@+id/cbSabado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="Sábado" />
+
+        <CheckBox
+            android:id="@+id/cbDomingo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="Domingo" />
+
+        <Space
+            android:layout_width="99dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAñadir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:backgroundTint="#358B0D"
+        android:text="Guardar" />
+
+    <Button
+        android:id="@+id/btnBusca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="40dp"
+        android:backgroundTint="#304FFE"
+        android:text="Buscar" />
+
+    <Button
+        android:id="@+id/btnModifica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="40dp"
+        android:backgroundTint="#6200EA"
+        android:text="Modificar" />
+
+    <Button
+        android:id="@+id/btnElimina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="40dp"
+        android:backgroundTint="#D50000"
+        android:text="Eliminar" />
+
+</LinearLayout>
