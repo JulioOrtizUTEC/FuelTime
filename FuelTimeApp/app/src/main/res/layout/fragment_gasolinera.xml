@@ -22,7 +22,7 @@
             android:layout_height="99dp"
             android:layout_marginTop="30dp"
             android:layout_weight="1"
-            android:src="@drawable/logo"/>
+            android:src="@drawable/logo" />
 
     </LinearLayout>
 
@@ -88,6 +88,16 @@
         android:text="Guardar" />
 
     <Button
+        android:id="@+id/btnEliminar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="40dp"
+        android:backgroundTint="#D50000"
+        android:text="Eliminar" />
+
+    <Button
         android:id="@+id/btnBuscar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -106,15 +116,5 @@
         android:layout_marginRight="40dp"
         android:backgroundTint="#6200EA"
         android:text="Modificar" />
-
-    <Button
-        android:id="@+id/btnEliminar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="40dp"
-        android:backgroundTint="#D50000"
-        android:text="Eliminar" />
 
 </LinearLayout>
